@@ -1,0 +1,1251 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --bg-dark: #000000;
+  --bg-card: #0c0c0d;
+  --bg-brick: #0f0a0a;
+  /* Dark reddish-black base for brick pattern */
+  --bg-concrete: #121214;
+  /* Dark grey base for concrete pattern */
+  --text-white: #ffffff;
+  --text-muted: #8e8e93;
+  --accent-pink: #ff007f;
+  /* Hot Pink */
+
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  font-family: var(--font-body);
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2c2c2e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-pink);
+}
+
+/* Base Styles */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.pink-text {
+  color: var(--accent-pink);
+}
+
+/* Header */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: var(--text-white);
+  letter-spacing: -0.01em;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-white);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+}
+
+nav a:hover {
+  color: var(--accent-pink);
+}
+
+.nav-btn {
+  background: transparent;
+  color: var(--text-white);
+  border: 2px solid var(--text-white);
+  padding: 10px 24px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: var(--transition-smooth);
+}
+
+.nav-btn:hover {
+  background: var(--accent-pink);
+  border-color: var(--accent-pink);
+}
+
+/* Hero Section (Full-bleed) */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('assets/seongsu_wedding_venue.jpg');
+  background-size: cover;
+  background-position: center;
+  padding-top: 90px;
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-weight: 900;
+}
+
+.hero-desc {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #ffffff;
+  margin-bottom: 40px;
+  font-weight: 400;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--accent-pink);
+  color: var(--text-white);
+  border: none;
+  padding: 18px 40px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+  background: var(--text-white);
+  color: var(--bg-dark);
+}
+
+/* Floating Circle Button */
+.circle-btn {
+  position: absolute;
+  top: -40px;
+  right: -100px;
+  width: 90px;
+  height: 90px;
+  background: var(--text-white);
+  color: var(--bg-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  transform: rotate(-12deg);
+  animation: floatCircle 4s ease-in-out infinite;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes floatCircle {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-12deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(-12deg);
+  }
+}
+
+/* Section Common */
+section {
+  padding: 100px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+section>* {
+  position: relative;
+  z-index: 1;
+}
+
+.section-label {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 700;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-desc {
+  font-size: 1.1rem;
+  color: var(--text-white);
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+/* Concept Section (Split columns) */
+.concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.concept-img-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.concept-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+}
+
+.concept-text h3 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.concept-text p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.concept-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.concept-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.concept-list li span {
+  color: var(--accent-pink);
+  margin-top: 2px;
+}
+
+/* Benefit tags for the 12 items */
+.benefit-tags {
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 14px 16px;
+  margin-top: 20px;
+}
+
+.benefit-tags li {
+  font-size: 0.95rem;
+  word-break: keep-all;
+}
+
+@media (max-width: 600px) {
+  .benefit-tags {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Program / Highlight cards */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.highlight-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.highlight-card:hover {
+  border-color: var(--accent-pink);
+  transform: translateY(-5px);
+}
+
+/* 배경 이미지 — opacity로 자체 투명도 조절, 라인 없음 */
+.card-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+  transition: opacity 0.4s ease;
+}
+
+.highlight-card:hover .card-bg-img {
+  opacity: 0.9;
+}
+
+.card-body {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+}
+
+.card-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--accent-pink);
+  margin-bottom: 24px;
+  font-weight: 900;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-title-main {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-title-sub {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-desc {
+  color: var(--text-white);
+  font-size: 1.0rem;
+  line-height: 1.6;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Normal Card (Image Top, Text Bottom) */
+.normal-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+.normal-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-pink);
+}
+.card-img-top {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+.card-body-normal {
+  padding: 24px;
+}
+.card-title-normal {
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--text-white);
+  font-family: var(--font-display);
+}
+
+
+/* ===== Honeymoon Benefit Cards ===== */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.benefit-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--accent-pink);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 0, 127, 0.46) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.benefit-card:hover {
+  border-color: rgba(255, 0, 127, 0.4);
+  border-left-color: var(--accent-pink);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(255, 0, 127, 0.12);
+}
+
+.benefit-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.benefit-card:hover::before {
+  opacity: 1;
+}
+
+.benefit-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.benefit-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.benefit-dest {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: -0.01em;
+}
+
+.benefit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.benefit-list li {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.85);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.benefit-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--accent-pink);
+  font-size: 0.65rem;
+  top: 4px;
+}
+
+.benefit-detail {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+/* ===== 박람회 특전 배너 ===== */
+.benefit-banner {
+  position: relative;
+  margin-bottom: 40px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 0, 127, 0.15) 0%, rgba(68, 16, 53, 0.9) 50%, rgba(255, 0, 127, 0.08) 100%);
+  border: 1px solid rgba(255, 0, 127, 0.25);
+  padding: 2px;
+}
+
+.benefit-banner-glow {
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 0, 127, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+  animation: bannerGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes bannerGlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate(-40px, 30px) scale(1.3);
+    opacity: 1;
+  }
+}
+
+.benefit-banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 32px 36px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 14px;
+}
+
+.benefit-banner-badge {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--text-white);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.benefit-banner-items {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.benefit-banner-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+}
+
+.benefit-banner-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--accent-pink);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.benefit-banner-item strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.4;
+}
+
+.benefit-banner-item em {
+  color: var(--accent-pink);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.benefit-banner-note {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.benefit-banner-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+/* Benefit responsive */
+@media (max-width: 900px) {
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-banner-items {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .benefit-banner-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .benefit-banner-content {
+    padding: 24px 20px;
+  }
+}
+
+
+/* Piumst Gallery Section */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  aspect-ratio: 1;
+  border-radius: 12px;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.08);
+}
+
+/* 4-column gallery grid */
+.gallery-grid-4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-grid-4col .gallery-item {
+  aspect-ratio: auto;
+}
+
+.gallery-grid-4col .gallery-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Gallery Caption */
+.gallery-caption {
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gallery-caption strong {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-white);
+}
+
+.gallery-caption span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Details & Location */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.info-row {
+  border-left: 2px solid var(--accent-pink);
+  padding-left: 24px;
+}
+
+.info-row h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.info-row p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.map-container {
+  height: 380px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: invert(90%) hue-rotate(180deg);
+}
+
+/* RSVP Form */
+.rsvp-box {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 60px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.rsvp-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.rsvp-header h2 {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+
+.rsvp-header p {
+  color: var(--text-muted);
+}
+
+.rsvp-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group select {
+  background: #121214;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  font-size: 1rem;
+  color: var(--text-white);
+  font-family: var(--font-body);
+  transition: var(--transition-smooth);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent-pink);
+  background: #18181b;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.form-checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-pink);
+}
+
+.rsvp-submit {
+  grid-column: span 2;
+  margin-top: 16px;
+}
+
+.rsvp-submit button {
+  width: 100%;
+  background: var(--accent-pink);
+  color: var(--text-white);
+  border: none;
+  padding: 18px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.rsvp-submit button:hover {
+  background: var(--text-white);
+  color: var(--bg-dark);
+}
+
+/* Success View */
+.success-msg {
+  display: none;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.success-msg h3 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.success-msg p {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* Footer */
+footer {
+  background: #050505;
+  padding: 50px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Gift Banner */
+.gift-banner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.gift-banner-img {
+  flex: 1 1 calc(50% - 6px);
+  min-width: 0;
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+
+  .hero-grid,
+  .concept-grid,
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .nav-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 300px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .rsvp-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .rsvp-submit {
+    grid-column: span 1;
+  }
+
+  .circle-btn {
+    display: none;
+    /* remove floating button on smaller mobile */
+  }
+
+  .rsvp-box {
+    padding: 32px 20px;
+  }
+
+  .gallery-grid-4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gift-banner {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .gift-banner-img {
+    flex: 0 0 100%;
+    height: auto;
+  }
+
+  .gift-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gift-circles {
+    flex-wrap: wrap;
+  }
+
+  .gift-circle {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Background Texture Utilities */
+
+/* Shared pseudo-element for all section bg images */
+#about::before,
+#gallery::before,
+#program::before,
+#weddinghall::before,
+#honeymoon::before,
+#jewelry::before,
+#suit::before,
+#totalwedding::before,
+#seongsu-date::before,
+#info::before,
+#gift::before,
+#rsvp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* OUR VALUE — wedding (2).jpg */
+#about {
+  background-color: #0f0a0a;
+}
+
+#about::before {
+  background-image: url("assets/wedding%20(2).jpg");
+  opacity: 0.12;
+}
+
+/* STYLE ARCHIVE — wedding (1).jpg */
+#gallery {
+  background-color: #0c0c0d;
+}
+
+#gallery::before {
+  background-image: url("assets/wedding%20(1).jpg");
+  opacity: 0.12;
+}
+
+/* PROGRAMS — wedding (3).jpg */
+#program {
+  background-color: #014131;
+}
+
+#program::before {
+  background-image: url("assets/wedding%20(3).jpg");
+  opacity: 0.22;
+}
+
+/* WWEDDING HALL — housewedding.jpg */
+#weddinghall {
+  background-color: #3a3729;
+}
+
+#weddinghall::before {
+  background-image: url("assets/wedding2.jpg");
+  opacity: 0.22;
+}
+
+/* HONEYMOON — wedding3.jpg */
+#honeymoon {
+  background-color: #1a4e7e;
+}
+
+#honeymoon::before {
+  background-image: url("assets/wedding3.jpg");
+  opacity: 0.22;
+}
+
+/* JEWELRY — wedding4.jpg */
+#jewelry {
+  background-color: #2a2b30;
+}
+
+#jewelry::before {
+  background-image: url("assets/orot_story2.jpg");
+  opacity: 0.22;
+}
+
+/* 수트 — wedding5.jpg */
+#suit {
+  background-color: #4b2200;
+}
+
+#suit::before {
+  background-image: url("assets/tailor-logo.jpg");
+  opacity: 0.22;
+}
+
+/* 토탈웨딩 */
+#totalwedding {
+  background-color: #ffcef37a;
+}
+
+#totalwedding::before {
+  background-image: url("assets/total01.jpg");
+  opacity: 0.22;
+}
+
+/* gift */
+#gift {
+  background-color: #92D050;
+}
+
+#gift::before {
+  display: none;
+}
+
+/* 성수 데이트 프로모션 */
+#seongsu-date {
+  background-color: #1a1a1a;
+}
+
+#seongsu-date::before {
+  background-image: url("assets/promo-1.jpg");
+  opacity: 0.2;
+}
+
+/* Gift Bottom: circles + info */
+.gift-bottom {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 16px;
+}
+
+.gift-circles {
+  display: flex;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.gift-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.gift-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gift-info {
+  flex: 1;
+}
+
+.gift-info-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 16px;
+}
+
+.gift-floor-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gift-floor-list li {
+  font-size: 1rem;
+  color: var(--text-white);
+}
+
+.gift-floor-list li strong {
+  color: var(--accent-pink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  margin-right: 8px;
+}
+
+/* LOCATION & SCHEDULE — wedding (4).jpg */
+#info {
+  background-color: #121214;
+}
+
+#info::before {
+  background-image: url("assets/wedding%20(4).jpg");
+  opacity: 0.12;
+}
+
+/* RSVP — brick-wall.jpg */
+#rsvp {
+  background-color: #0f0a0a;
+}
+
+#rsvp::before {
+  background-image: url("assets/brick-wall.jpg");
+  opacity: 0.18;
+}
+
+.bg-concrete {
+  background-color: var(--bg-concrete);
+}
