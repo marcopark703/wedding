@@ -434,19 +434,23 @@ section>* {
   overflow: hidden;
   transition: var(--transition-smooth);
 }
+
 .normal-card:hover {
   transform: translateY(-5px);
   border-color: var(--accent-pink);
 }
+
 .card-img-top {
   width: 100%;
   height: 240px;
   object-fit: cover;
   display: block;
 }
+
 .card-body-normal {
   padding: 24px;
 }
+
 .card-title-normal {
   font-size: 1.25rem;
   margin: 0;
@@ -1237,7 +1241,7 @@ footer {
 }
 
 #info::before {
-  background-image: url("assets/wedding-4.jpg");
+  background-image: url("assets/building.jpg");
   opacity: 0.12;
 }
 
