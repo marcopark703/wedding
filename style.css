@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
 
 :root {
   --bg-dark: #000000;
@@ -1074,7 +1074,7 @@ footer {
 }
 
 #about::before {
-  background-image: url("assets/wedding%20(2).jpg");
+  background-image: url("assets/wedding-2.jpg");
   opacity: 0.12;
 }
 
@@ -1084,7 +1084,7 @@ footer {
 }
 
 #gallery::before {
-  background-image: url("assets/wedding%20(1).jpg");
+  background-image: url("assets/wedding-1.jpg");
   opacity: 0.12;
 }
 
@@ -1094,7 +1094,7 @@ footer {
 }
 
 #program::before {
-  background-image: url("assets/wedding%20(3).jpg");
+  background-image: url("assets/wedding-3.jpg");
   opacity: 0.22;
 }
 
@@ -1232,7 +1232,7 @@ footer {
 }
 
 #info::before {
-  background-image: url("assets/wedding%20(4).jpg");
+  background-image: url("assets/wedding-4.jpg");
   opacity: 0.12;
 }
 
