@@ -277,6 +277,17 @@ section>* {
   margin-bottom: 60px;
 }
 
+.section-event {
+  font-size: 1.3rem;
+  color: #383838;
+  background-color: #ffffff;
+  font-style: italic;
+  font-weight: 800;
+  padding: 8px 16px;
+  display: inline-block;
+  margin-bottom: 60px;
+}
+
 /* Concept Section (Split columns) */
 .concept-grid {
   display: grid;
@@ -354,6 +365,46 @@ section>* {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 15px;
 }
+
+/* 이미지 원본 비율 그대로 표시하는 포토 그리드 */
+.photo-grid {
+  columns: 3;
+  column-gap: 12px;
+}
+
+.photo-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.photo-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.92;
+}
+
+.photo-item img:hover {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    columns: 1;
+  }
+}
+
 
 .highlight-card {
   position: relative;
@@ -1099,7 +1150,7 @@ footer {
 
 /* PROGRAMS — wedding (3).jpg */
 #program {
-  background-color: #014131;
+  background-color: #012b08;
 }
 
 #program::before {
@@ -1109,7 +1160,7 @@ footer {
 
 /* WWEDDING HALL — housewedding.jpg */
 #weddinghall {
-  background-color: #3a3729;
+  background-color: #2b2300;
 }
 
 #weddinghall::before {
@@ -1149,7 +1200,7 @@ footer {
 
 /* 토탈웨딩 */
 #totalwedding {
-  background-color: #ffcef37a;
+  background-color: #c591b87a;
 }
 
 #totalwedding::before {
@@ -1159,11 +1210,12 @@ footer {
 
 /* gift */
 #gift {
-  background-color: #92D050;
+  background-color: #50722c;
 }
 
 #gift::before {
-  display: none;
+  background-image: url("assets/olivyoung-1.jpg");
+  opacity: 0.22;
 }
 
 /* 성수 데이트 프로모션 */
@@ -1257,4 +1309,25 @@ footer {
 
 .bg-concrete {
   background-color: var(--bg-concrete);
+}
+
+/* DRESS — ttwedding07.jpg */
+#dress {
+  background-color: #19102b;
+}
+
+#dress::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/ttwedding07.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  z-index: 0;
+}
+
+#gift::before {
+  background-image: url("assets/olivyoung-1.jpg");
+  opacity: 0.18;
 }

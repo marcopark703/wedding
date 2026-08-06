@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   // Checkboxes behavior
   const weddingDateUndecided = document.getElementById('weddingDateUndecided');
   const weddingDateInput = document.getElementById('weddingDate');
