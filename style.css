@@ -366,6 +366,25 @@ section>* {
   gap: 15px;
 }
 
+.highlight-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+}
+
+.highlight-card:hover {
+  border-color: var(--accent-pink);
+  transform: translateY(-5px);
+}
+
+.highlight-card:hover .card-bg-img {
+  opacity: 0.9;
+}
+
 /* 이미지 원본 비율 그대로 표시하는 포토 그리드 */
 .photo-grid {
   columns: 3;
@@ -405,21 +424,6 @@ section>* {
   }
 }
 
-
-.highlight-card {
-  position: relative;
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: var(--transition-smooth);
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.highlight-card:hover {
-  border-color: var(--accent-pink);
-  transform: translateY(-5px);
-}
-
 /* 배경 이미지 — opacity로 자체 투명도 조절, 라인 없음 */
 .card-bg-img {
   position: absolute;
@@ -429,10 +433,6 @@ section>* {
   object-fit: cover;
   opacity: 0.65;
   transition: opacity 0.4s ease;
-}
-
-.highlight-card:hover .card-bg-img {
-  opacity: 0.9;
 }
 
 .card-body {
