@@ -262,30 +262,83 @@
         할인 정보 상담</h2>
       <p class="section-desc">성수동 웨딩 쇼케이스에서 제공하는 스페셜 프로그램을 통해 둘만의 특별한 웨딩을 완성하세요.</p>
 
-      <div class="highlights-grid">
-        <div class="highlight-card">
-          <img src="assets/weddinghall04.jpg" alt="" class="card-bg-img">
-          <div class="card-body">
-            <div class="card-num"> </div>
-            <p class="card-desc">빨리 예약하는 커플이 임자!<br>최적의 장소와 합리적인 견적 비교 상담까지!</p>
-            <h3 class="card-title">실시간 예약 가능한 웨딩홀 섭외, 호텔/하우스웨딩, 퍼블릭웨딩홀, 컨벤션센터</h3>
+      <!-- 웨딩홀 전용 레이아웃 카드 스타일 정의 -->
+      <style>
+        .weddinghall-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 24px;
+        }
+        .weddinghall-card {
+          display: flex;
+          flex-direction: column;
+          background: var(--bg-card);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 12px;
+          overflow: hidden;
+          transition: var(--transition-smooth);
+          padding: 20px;
+          box-sizing: border-box;
+        }
+        .weddinghall-card:hover {
+          border-color: var(--accent-pink);
+          transform: translateY(-5px);
+        }
+        .weddinghall-card .card-top-desc {
+          font-size: 1.05rem;
+          color: var(--accent-pink);
+          font-weight: 700;
+          margin-bottom: 12px;
+          line-height: 1.4;
+          word-break: keep-all;
+          overflow-wrap: break-word;
+        }
+        .weddinghall-card .card-img-wrap {
+          width: 100%;
+          border-radius: 8px;
+          overflow: hidden;
+          margin-bottom: 16px;
+        }
+        .weddinghall-card .card-img {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 4 / 3;
+          object-fit: cover;
+          display: block;
+        }
+        .weddinghall-card .card-bottom-title {
+          font-size: 1.15rem;
+          font-family: var(--font-body);
+          font-weight: 600;
+          color: var(--text-white);
+          line-height: 1.5;
+          word-break: keep-all;
+          overflow-wrap: break-word;
+          margin: 0;
+        }
+      </style>
+
+      <div class="weddinghall-grid">
+        <div class="weddinghall-card">
+          <div class="card-top-desc">빨리 예약하는 커플이 임자!<br>최적의 장소와 합리적인 견적 비교 상담까지!</div>
+          <div class="card-img-wrap">
+            <img src="assets/weddinghall04.jpg" alt="" class="card-img">
           </div>
+          <h3 class="card-bottom-title">실시간 예약 가능한 웨딩홀 섭외, 호텔/하우스웨딩, 퍼블릭웨딩홀, 컨벤션센터</h3>
         </div>
-        <div class="highlight-card">
-          <img src="assets/weddinghall02.jpg" alt="" class="card-bg-img">
-          <div class="card-body">
-            <div class="card-num"> </div>
-            <p class="card-desc">피로연 음식은 맛있고 봐야죠?!</p>
-            <h3 class="card-title">웨딩홀 별 무료시식 지원, 식대 할인 정보, 특별 제공 </h3>
+        <div class="weddinghall-card">
+          <div class="card-top-desc">피로연 음식은 맛있고 봐야죠?!</div>
+          <div class="card-img-wrap">
+            <img src="assets/weddinghall02.jpg" alt="" class="card-img">
           </div>
+          <h3 class="card-bottom-title">웨딩홀 별 무료시식 지원, 식대 할인 정보, 특별 제공</h3>
         </div>
-        <div class="highlight-card">
-          <img src="assets/weddinghall03.jpg" alt="" class="card-bg-img">
-          <div class="card-body">
-            <div class="card-num"> </div>
-            <p class="card-desc">나만의 특별한 웨딩을 원해!</p>
-            <h3 class="card-title">야외웨딩, 대학교, 공원, 숲속 등 나만의 특별한 장소에서 진행하는 결혼식 상담!</h3>
+        <div class="weddinghall-card">
+          <div class="card-top-desc">나만의 특별한 웨딩을 원해!</div>
+          <div class="card-img-wrap">
+            <img src="assets/weddinghall03.jpg" alt="" class="card-img">
           </div>
+          <h3 class="card-bottom-title">야외웨딩, 대학교, 공원, 숲속 등 나만의 특별한 장소에서 진행하는 결혼식 상담!</h3>
         </div>
       </div>
       <br><br>
