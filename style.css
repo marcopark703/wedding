@@ -285,7 +285,7 @@ section>* {
   font-weight: 800;
   padding: 8px 16px;
   display: inline-block;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 /* Concept Section (Split columns) */
@@ -1120,6 +1120,7 @@ footer {
 #jewelry::before,
 #suit::before,
 #totalwedding::before,
+#studio::before,
 #seongsu-date::before,
 #info::before,
 #gift::before,
@@ -1210,6 +1211,16 @@ footer {
 
 #totalwedding::before {
   background-image: url("assets/total01.jpg");
+  opacity: 0.22;
+}
+
+/* 스튜디오 */
+#studio {
+  background-color: #91c5c57a;
+}
+
+#studio::before {
+  background-image: url("assets/studio01.jpg");
   opacity: 0.22;
 }
 
