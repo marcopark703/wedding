@@ -66,7 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
       // Basic Validation
       const role = document.getElementById('role').value;
       const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
+      // 전화번호 정규화: 숫자만 추출 후 xxx-xxxx-xxxx 형식으로 변환
+      const phoneRaw = document.getElementById('phone').value.trim();
+      const phoneDigits = phoneRaw.replace(/\D/g, '');
+      let phone = phoneRaw;
+      if (/^\d{10}$/.test(phoneDigits)) {
+        phone = phoneDigits.slice(0, 3) + '-' + phoneDigits.slice(3, 6) + '-' + phoneDigits.slice(6);
+      } else if (/^\d{11}$/.test(phoneDigits)) {
+        phone = phoneDigits.slice(0, 3) + '-' + phoneDigits.slice(3, 7) + '-' + phoneDigits.slice(7);
+      }
 
       const weddingDateInput = document.getElementById('weddingDate').value;
       const weddingDateUndecided = document.getElementById('weddingDateUndecided').checked;
