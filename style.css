@@ -1347,3 +1347,77 @@ footer {
   background-image: url("assets/olivyoung-1.jpg");
   opacity: 0.18;
 }
+
+
+
+/* ==========================
+   PARTNERS
+========================== */
+
+.partner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.partner-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+
+.partner-card:hover {
+  border-color: var(--accent-pink);
+  transform: translateY(-4px);
+}
+
+.partner-category {
+  background: linear-gradient(135deg,
+      rgba(255, 126, 179, .15),
+      rgba(255, 255, 255, .05));
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 32px;
+  text-align: center;
+
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.partner-category small {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent-pink);
+  font-size: .95rem;
+}
+
+.partner-content {
+  padding: 32px;
+  line-height: 2;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .partner-card {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-category {
+    padding: 24px;
+  }
+
+  .partner-content {
+    padding: 24px;
+  }
+}
