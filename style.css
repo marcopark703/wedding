@@ -1421,3 +1421,493 @@ footer {
     padding: 24px;
   }
 }
+
+/* ========================================================
+   [웨딩 패키지 전용 스타일 - WEDDING EDIT SECTION]
+   처음 디자인의 레이아웃 + 가로 폭 1200px + 투명 처리 버전
+   ======================================================== */
+.wedding-package-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: transparent; /* 배경 투명 처리로 사이트 테마와 자연스러운 융합 */
+  padding: 0;
+  color: #ffffff;
+  position: relative;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 상단 헤더 (첫 버전 레이아웃) */
+.wp-header {
+  position: relative;
+  margin-bottom: 35px;
+}
+.wp-badge-top {
+  font-size: 0.95rem;
+  color: #cfdbd5;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+.wp-main-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.wp-sub-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 25px;
+  letter-spacing: -0.01em;
+}
+.wp-sub-title .hot-tag {
+  color: var(--accent-pink);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  margin-right: 4px;
+}
+
+/* 우측 상단 원형 WE 엠블럼 */
+.wp-emblem {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wp-emblem svg {
+  width: 100%;
+  height: 100%;
+  animation: rotateEmblem 24s linear infinite;
+}
+.wp-emblem-center {
+  position: absolute;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+}
+@keyframes rotateEmblem {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* WEDDING EDIT 로고 & 슬로건 (중앙 정렬 구조 유지) */
+.wp-brand-title {
+  text-align: center;
+  margin: 15px 0 35px;
+  position: relative;
+}
+.wp-brand-logo {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.wp-sparkle {
+  font-size: 1rem;
+  color: #d6e2dd;
+  opacity: 0.85;
+}
+.wp-slogan-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+.wp-slogan-line {
+  flex: 1;
+  max-width: 200px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+.wp-slogan {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  color: #cbd7d2;
+  text-transform: uppercase;
+}
+
+/* ========================================================
+   패키지 카드 리스트 (3종) - 1200px에 맞춘 크기 밸런스 조정
+   ======================================================== */
+.wp-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 45px;
+}
+
+.wp-card {
+  background: #ffffff;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 320px 1fr 230px; /* 1200px 컨테이너에 완벽 매칭되도록 가로 비율 조정 */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: #222222;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.wp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.5);
+}
+.wp-card.card-mood {
+  border: 2px solid var(--accent-pink);
+}
+
+/* 1) 좌측 썸네일 영역 - 이미지 둥근 모서리가 안 보이도록 크롭 */
+.wp-card-thumb {
+  position: relative;
+  background: #eef0f2;
+  overflow: hidden;
+  min-height: 200px;
+}
+.wp-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.wp-card:hover .wp-card-thumb img {
+  transform: scale(1.04);
+}
+
+/* 2) 중앙 상세 스펙 영역 */
+.wp-card-body {
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #ffffff;
+}
+
+/* 좌측: 타이틀 & 영문 슬로건 */
+.wp-info-title-box {
+  flex-shrink: 0;
+  width: 170px;
+}
+.wp-num-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.wp-card-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.wp-card.card-basic .wp-card-num { color: #5a578c; }
+.wp-card.card-mood .wp-card-num { color: #d04d5c; }
+.wp-card.card-iconic .wp-card-num { color: #32577f; }
+
+.wp-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #222;
+}
+.wp-star {
+  color: var(--accent-pink);
+  font-size: 1.05rem;
+  margin-left: 2px;
+}
+
+.wp-script-text {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.wp-card.card-basic .wp-script-text { color: #6a6799; }
+.wp-card.card-mood .wp-script-text { color: #d04d5c; }
+.wp-card.card-iconic .wp-script-text { color: #32577f; }
+
+.wp-summary-desc {
+  font-size: 0.82rem;
+  color: #555555;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+/* 우측: 스드메 업체 목록 리스트 */
+.wp-vendor-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 24px;
+  border-left: 1px dashed #e2e4e8;
+}
+.wp-vendor-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.wp-vendor-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f0f3f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #495057;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+}
+.wp-vendor-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.wp-vendor-cat {
+  font-size: 0.75rem;
+  color: #777777;
+  font-weight: 600;
+}
+.wp-vendor-name {
+  font-size: 0.92rem;
+  color: #111111;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* 3) 우측 가격 배너 영역 */
+.wp-card-price-box {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+
+.wp-card.card-basic .wp-card-price-box {
+  background: linear-gradient(145deg, #8a92bb, #7880ab);
+}
+.wp-card.card-mood .wp-card-price-box {
+  background: linear-gradient(145deg, #e4878e, #d6747c);
+}
+.wp-card.card-iconic .wp-card-price-box {
+  background: linear-gradient(145deg, #5b81a4, #4a7093);
+}
+
+.wp-price-main {
+  font-family: 'Playfair Display', 'Montserrat', serif;
+  font-size: 2.85rem;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+.wp-price-unit {
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.95;
+  margin-bottom: 12px;
+}
+
+/* 추천 리본 뱃지 (MOOD 카드 전용) */
+.wp-ribbon-badge {
+  background: #c91741;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+}
+
+.wp-price-subtext {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.45;
+  opacity: 0.92;
+  letter-spacing: 0.01em;
+}
+
+/* ========================================================
+   하단 패키지 특징 요약 (3단 그리드)
+   ======================================================== */
+.wp-footer-summary {
+  margin-top: 35px;
+  padding: 35px 30px;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  text-align: center;
+}
+.wp-footer-desc-top {
+  font-size: 1.05rem;
+  color: #e5ede9;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: -0.01em;
+}
+.wp-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  text-align: center;
+}
+.wp-footer-col {
+  padding: 0 16px;
+  position: relative;
+}
+.wp-footer-col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  border-right: 1px dashed rgba(255, 255, 255, 0.15);
+}
+.wp-footer-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.wp-footer-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+.wp-footer-col:nth-child(1) .wp-footer-num { background: #8a92bb; }
+.wp-footer-col:nth-child(2) .wp-footer-num { background: #e4878e; }
+.wp-footer-col:nth-child(3) .wp-footer-num { background: #5b81a4; }
+
+.wp-footer-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+.wp-footer-rec-mini {
+  display: inline-block;
+  background: var(--accent-pink);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+.wp-footer-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.wp-notice {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #71717a;
+}
+
+/* ========================================================
+   반응형 미디어 쿼리 (태블릿 & 모바일 최적화)
+   ======================================================== */
+@media (max-width: 992px) {
+  .wp-card {
+    grid-template-columns: 240px 1fr 190px;
+  }
+  .wp-card-body { padding: 20px; gap: 16px; }
+  .wp-info-title-box { width: 140px; }
+  .wp-price-main { font-size: 2.4rem; }
+}
+
+@media (max-width: 768px) {
+  .wp-emblem {
+    width: 75px;
+    height: 75px;
+  }
+  .wp-emblem-center {
+    font-size: 1.1rem;
+  }
+  .wp-brand-logo { font-size: 1.8rem; }
+  .wp-slogan-line { max-width: 100px; }
+
+  .wp-card {
+    grid-template-columns: 1fr;
+  }
+  .wp-card-thumb {
+    height: 220px;
+  }
+  .wp-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wp-info-title-box {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .wp-vendor-list {
+    width: 100%;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px dashed #e2e4e8;
+    padding-top: 16px;
+  }
+  
+  .wp-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .wp-footer-col:not(:last-child)::after {
+    display: none;
+  }
+  .wp-footer-col {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+  }
+  .wp-footer-col:last-child {
+    border-bottom: none;
+  }
+}
