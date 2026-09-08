@@ -2633,3 +2633,166 @@ footer {
     border-bottom: none;
   }
 }
+
+/* ==========================================================================
+   3STEP 상담 이벤트 Section Styles
+   ========================================================================== */
+.step-event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 45px 0 35px;
+}
+
+.step-event-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1.5px solid rgba(0, 0, 0, 0.06);
+  padding: 36px 24px 30px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(255, 0, 127, 0.12);
+  border-color: rgba(255, 0, 127, 0.35);
+}
+
+.step-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 5px 14px;
+  border-radius: 30px;
+  background: #fff0f6;
+  color: var(--accent-pink);
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 0, 127, 0.15);
+}
+
+.step-icon-wrap {
+  width: 76px;
+  height: 76px;
+  border-radius: 22px;
+  background: #fff3f8;
+  color: var(--accent-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 22px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 0, 127, 0.1);
+}
+
+.step-event-card:hover .step-icon-wrap {
+  background: var(--accent-pink);
+  color: #ffffff;
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 12px 24px rgba(255, 0, 127, 0.28);
+}
+
+.step-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.step-card-desc {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  word-break: keep-all;
+}
+
+.step-check-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #111111;
+  background: #f8f9fa;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-top: auto;
+}
+
+.step-check-tag i {
+  color: var(--accent-pink);
+  font-size: 0.8rem;
+}
+
+.consult-benefit-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #fff6fa 100%);
+  border: 1.5px solid rgba(255, 0, 127, 0.25);
+  border-radius: 20px;
+  padding: 36px 30px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 12px 35px rgba(255, 0, 127, 0.08);
+  margin-top: 15px;
+}
+
+.consult-benefit-badge {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: #111111;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  margin-bottom: 14px;
+}
+
+.consult-benefit-sub {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #444444;
+  margin-bottom: 18px;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.consult-benefit-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 0, 127, 0.2);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333333;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 860px) {
+  .step-event-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .step-event-card {
+    padding: 28px 20px 24px;
+  }
+
+  .consult-benefit-badge {
+    font-size: 1.5rem;
+  }
+
+  .consult-benefit-sub {
+    font-size: 1rem;
+  }
+}
