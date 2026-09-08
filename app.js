@@ -144,10 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
               successMsg.style.transition = 'opacity 0.5s ease';
               successMsg.style.opacity = '1';
 
-              // RSVP 박스 위치에 머무르도록 부드럽게 고정
+              // RSVP 섹션 상단 첫부분이 기준이 되도록 스크롤
               const rsvpSection = document.getElementById('rsvp');
               if (rsvpSection) {
-                rsvpSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                rsvpSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }
             }, 500);
           } else {
