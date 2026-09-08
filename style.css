@@ -1,19 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
 
 :root {
-  --bg-dark: #000000;
-  --bg-card: #0c0c0d;
-  --bg-brick: #0f0a0a;
-  /* Dark reddish-black base for brick pattern */
-  --bg-concrete: #121214;
-  /* Dark grey base for concrete pattern */
-  --text-white: #ffffff;
-  --text-muted: #8e8e93;
+  --bg-dark: #f7f6f4;
+  --bg-card: #ffffff;
+  --bg-brick: #fdf9f5;
+  /* Light warm cream base */
+  --bg-concrete: #f4f2ef;
+  /* Light grey-cream base */
+  --text-white: #1a1a1a;
+  --text-muted: #666666;
   --accent-pink: #ff007f;
   /* Hot Pink */
 
-  --font-display: 'Montserrat', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Montserrat', 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  --font-body: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -25,8 +26,8 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg-dark);
-  color: var(--text-white);
+  background-color: #f7f6f4;
+  color: #1a1a1a;
   font-family: var(--font-body);
 }
 
@@ -43,11 +44,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: #f0eee9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2c2c2e;
+  background: #d4cfc8;
   border-radius: 4px;
 }
 
@@ -74,7 +75,10 @@ h3 {
   color: var(--accent-pink);
 }
 
-/* Header */
+/* ========================================================
+   Header (헤더 상단 네비게이션)
+   - 밝은 테마에 맞게 텍스트 컬러 및 테두리를 깔끔한 다크/핑크로 조화
+   ======================================================== */
 header {
   position: absolute;
   top: 0;
@@ -82,7 +86,7 @@ header {
   width: 100%;
   z-index: 1000;
   background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
 }
 
 .nav-container {
@@ -97,22 +101,25 @@ header {
 
 .logo {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 900;
   text-decoration: none;
-  color: var(--text-white);
+  color: #111111;
+  /* [조절] 로고 텍스트 색상 */
   letter-spacing: -0.01em;
 }
 
 nav ul {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 32px;
 }
 
 nav a {
   text-decoration: none;
-  color: var(--text-white);
+  color: #222222;
+  /* [조절] 상단 메뉴 텍스트 색상 */
   font-weight: 700;
   font-size: 0.95rem;
   text-transform: uppercase;
@@ -125,8 +132,8 @@ nav a:hover {
 
 .nav-btn {
   background: transparent;
-  color: var(--text-white);
-  border: 2px solid var(--text-white);
+  color: #111111;
+  border: 2px solid #111111;
   padding: 10px 24px;
   font-family: var(--font-display);
   font-weight: 700;
@@ -140,92 +147,292 @@ nav a:hover {
 .nav-btn:hover {
   background: var(--accent-pink);
   border-color: var(--accent-pink);
+  color: #ffffff;
 }
 
-/* Hero Section (Full-bleed) */
+/* ========================================================
+   Hero Section (감성 웨딩화보 포스터 스타일 - Pretendard 유지)
+   ======================================================== */
+/* ========================================================
+   Hero Section (감성 웨딩화보 포스터 스타일 - 상하 분산 밸런스)
+   ======================================================== */
 .hero {
   min-height: 100vh;
   position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* 상단(헤더 아래)과 하단(가슴 아래)으로 자연스럽게 분산 */
   align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('assets/seongsu_wedding_venue.jpg');
+  padding-top: 110px;
+  /* 상단 헤더와의 충분한 간격 */
+  padding-bottom: 50px;
+  /* 하단 바닥 간격 */
+  background-color: #f7f6f4;
+  overflow: hidden;
+
+  /* [배경 이미지]: 인물 얼굴이 중앙에 시원하게 나오도록 위치 최적화 */
+  background-image: linear-gradient(180deg,
+      rgba(245, 243, 239, 0.25) 0%,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0.15) 60%,
+      rgba(0, 0, 0, 0.65) 85%,
+      rgba(15, 15, 18, 0.9) 100%),
+    url('assets/main01.jpg');
+
   background-size: cover;
-  background-position: center;
-  padding-top: 90px;
+  background-position: center 18%;
+  /* 인물 표정이 가장 예쁘게 드러나는 위치 */
+  background-repeat: no-repeat;
 }
 
-.hero-content {
+/* 은은한 손그림/스파클 장식 */
+.hero-sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.sparkle {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.85);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  user-select: none;
+  animation: sparkleTwinkle 3s ease-in-out infinite alternate;
+}
+
+.sp-1 {
+  top: 18%;
+  left: 14%;
+  font-size: 2.2rem;
+  animation-delay: 0s;
+}
+
+.sp-2 {
+  top: 20%;
+  right: 15%;
+  font-size: 1.6rem;
+  animation-delay: 0.8s;
+}
+
+.sp-3 {
+  top: 50%;
+  left: 12%;
+  font-size: 1.8rem;
+  animation-delay: 1.5s;
+}
+
+.sp-4 {
+  top: 45%;
+  right: 14%;
+  font-size: 1.4rem;
+  color: #ffccd5;
+  animation-delay: 0.4s;
+}
+
+.sp-5 {
+  top: 75%;
+  right: 16%;
+  font-size: 2rem;
+  animation-delay: 2s;
+}
+
+@keyframes sparkleTwinkle {
+  0% {
+    transform: scale(0.9) rotate(0deg);
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: scale(1.15) rotate(15deg);
+    opacity: 1;
+  }
+}
+
+/* [상단 영역]: 인물 머리 위 공간에 세련된 캐치프레이즈 */
+.hero-top-wrap {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 720px;
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 40px;
+}
+
+.hero-sub-catch {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.98);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 10px 28px;
+  border-radius: 40px;
+  letter-spacing: -0.01em;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* [하단 영역]: 인물 가슴선 아래로 모아 안정감 부여 */
+.hero-bottom-wrap {
   text-align: center;
   position: relative;
   z-index: 10;
-  max-width: 900px;
+  max-width: 800px;
+  width: 100%;
+  padding: 0 20px;
+  transform: translateY(-50px);
 }
 
-.hero-title {
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  line-height: 1.1;
-  text-transform: uppercase;
-  margin-bottom: 24px;
+/* 포스터 타이틀 (Pretendard 굵기 완급 조절) */
+.hero-poster-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.poster-main {
+  font-family: var(--font-body);
+  font-size: clamp(2.4rem, 5.2vw, 3.8rem);
   font-weight: 900;
-}
-
-.hero-desc {
-  font-size: clamp(1rem, 2vw, 1.25rem);
   color: #ffffff;
-  margin-bottom: 40px;
-  font-weight: 400;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75);
+  margin: 0;
 }
 
+.city-highlight {
+  color: #ffffff;
+  letter-spacing: 0.12em;
+  margin-right: 4px;
+}
+
+.poster-en {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--accent-pink);
+  margin-top: 8px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* 일시 및 장소 정보 */
+.hero-info-box {
+  margin-bottom: 14px;
+}
+
+.hero-date {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2.3vw, 1.45rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+.hero-place {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #f0f0f0;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.place-label {
+  display: inline-block;
+  font-weight: 700;
+  color: #ffffff;
+  margin-right: 8px;
+  padding-right: 8px;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+/* 하단 혜택 뱃지 */
+.hero-benefit-badge {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  background: #fffdf5;
+  color: #1a1a1a;
+  padding: 8px 22px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  margin-bottom: 22px;
+}
+
+.hero-benefit-badge .dot {
+  color: #999999;
+  font-weight: 400;
+}
+
+/* CTA 버튼 액션 */
 .hero-actions {
   position: relative;
   display: inline-block;
+  margin-top: 6px;
 }
 
-.btn-primary {
+.hero-cta-btn {
   background: var(--accent-pink);
-  color: var(--text-white);
+  color: #ffffff;
   border: none;
-  padding: 18px 40px;
-  font-family: var(--font-display);
+  padding: 16px 48px;
+  font-family: var(--font-body);
   font-size: 1.1rem;
   font-weight: 800;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 10px 28px rgba(255, 0, 127, 0.45);
   transition: var(--transition-smooth);
 }
 
-.btn-primary:hover {
-  background: var(--text-white);
-  color: var(--bg-dark);
+.hero-cta-btn:hover {
+  background: #ffffff;
+  color: #111111;
+  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
 }
 
-/* Floating Circle Button */
+/* 오른쪽 둥근 배지 버튼 */
 .circle-btn {
   position: absolute;
-  top: -40px;
-  right: -100px;
-  width: 90px;
-  height: 90px;
-  background: var(--text-white);
-  color: var(--bg-dark);
+  top: -24px;
+  right: -85px;
+  width: 78px;
+  height: 78px;
+  background: #111111;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
   line-height: 1.1;
   transform: rotate(-12deg);
   animation: floatCircle 4s ease-in-out infinite;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 @keyframes floatCircle {
@@ -240,10 +447,34 @@ nav a:hover {
   }
 }
 
+/* ========================================================
+   섹션 하단 공통 CTA (전체 섹션에서 재사용)
+   ======================================================== */
+.section-cta-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 56px;
+}
+
+/* 어두운 배경 섹션(웨딩패키지 등)에서 circle-btn 색 보정 */
+.section-dark .circle-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+
+/* 밝은 배경 섹션에서 circle-btn 기본 스타일 */
+.section-cta-wrap .circle-btn {
+  background: #111111;
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
 /* Section Common */
 section {
   padding: 100px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
   position: relative;
   overflow: hidden;
 }
@@ -256,7 +487,7 @@ section>* {
 .section-label {
   font-family: var(--font-display);
   font-size: 1rem;
-  color: var(--text-white);
+  color: var(--accent-pink);
   text-transform: uppercase;
   margin-bottom: 20px;
   font-weight: 700;
@@ -267,95 +498,305 @@ section>* {
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.2;
   margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #111111;
+  text-shadow: none;
 }
 
 .section-desc {
   font-size: 1.1rem;
-  color: var(--text-white);
+  color: #555555;
   max-width: 800px;
   margin-bottom: 60px;
 }
 
 .section-event {
   font-size: 1.3rem;
-  color: #383838;
-  background-color: #ffffff;
+  color: #111111;
+  background-color: rgba(255, 0, 127, 0.06);
+  border-left: 3px solid var(--accent-pink);
   font-style: italic;
   font-weight: 800;
   padding: 8px 16px;
   display: inline-block;
   margin-bottom: 20px;
+  border-radius: 0 6px 6px 0;
 }
 
-/* Concept Section (Split columns) */
-.concept-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.concept-img-wrap {
-  width: 100%;
+/* ========================================================
+   About / Our Value Section (화사한 화이트톤 리뉴얼)
+   ======================================================== */
+.about-value-section {
+  position: relative;
+  padding: 120px 0;
+  background-color: #fdfdfd;
+  color: #1a1a1a;
   overflow: hidden;
-  border-radius: 12px;
+  border-top: none;
 }
 
-.concept-img {
-  width: 100%;
-  aspect-ratio: 16/10;
-  object-fit: cover;
-  display: block;
+/* 배경 이미지: ttwedding07.jpg 위에 은은하고 화사한 화이트 글래스/그라디언트 오버레이 */
+.about-value-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url('assets/main02.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
-.concept-text h3 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
+.about-value-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
-.concept-text p {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  margin-bottom: 30px;
-  line-height: 1.6;
+/* 헤더 */
+.about-header {
+  margin-bottom: 36px;
 }
 
-.concept-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-
-.concept-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-.concept-list li span {
+.about-badge {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   color: var(--accent-pink);
-  margin-top: 2px;
+  background: rgba(255, 0, 127, 0.08);
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 14px;
 }
 
-/* Benefit tags for the 12 items */
-.benefit-tags {
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 14px 16px;
-  margin-top: 20px;
+.about-main-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 900;
+  color: #111111;
+  letter-spacing: -0.03em;
+  margin: 0;
 }
 
-.benefit-tags li {
-  font-size: 0.95rem;
+/* 01~03 핵심 포인트 카드 */
+.about-points-card {
+  background: rgba(255, 255, 255, 0.11);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 0px solid rgba(220, 224, 230, 0);
+  border-radius: 20px;
+  padding: 34px 44px;
+  margin-bottom: 45px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+}
+
+.about-points-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.about-points-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #2b2b2b;
+  line-height: 1.5;
   word-break: keep-all;
 }
 
-@media (max-width: 600px) {
-  .benefit-tags {
+.point-num {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--accent-pink);
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.point-text {
+  font-weight: 500;
+}
+
+.point-text strong {
+  font-weight: 800;
+  color: #111111;
+}
+
+/* 6개 카테고리 그리드 (3열 x 2행) */
+.about-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 45px;
+}
+
+.about-cat-item {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 26px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-cat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border-color: rgba(255, 0, 127, 0.35);
+}
+
+.cat-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #fff3f8;
+  color: var(--accent-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.about-cat-item:hover .cat-icon-wrap {
+  background: var(--accent-pink);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.cat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #181818;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.cat-desc {
+  font-size: 0.88rem;
+  color: #666666;
+  margin: 0;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+/* 하단 플로우 (웨딩상담 → 드레스, 주얼리 체험 → 성수 핫플레이스 데이트) */
+.about-flow-wrap {
+  background: #ffffff;
+  border: 1.5px solid #f0f0f0;
+  border-radius: 18px;
+  padding: 22px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+.about-flow-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.about-flow-item.highlight {
+  background: #fff1f6;
+  border: 1px solid rgba(255, 0, 127, 0.25);
+}
+
+.flow-step {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #888888;
+  margin-bottom: 4px;
+}
+
+.about-flow-item.highlight .flow-step {
+  color: var(--accent-pink);
+}
+
+.flow-name {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #222222;
+  word-break: keep-all;
+}
+
+.about-flow-item.highlight .flow-name {
+  color: var(--accent-pink);
+}
+
+.flow-arrow {
+  color: #b0b4ba;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 반응형 모바일 */
+@media (max-width: 860px) {
+  .about-category-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-flow-wrap {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .about-flow-item {
+    width: 100%;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 560px) {
+  .about-value-section {
+    padding: 80px 0;
+  }
+
+  .about-points-card {
+    padding: 24px 20px;
+  }
+
+  .about-points-list li {
+    font-size: 1rem;
+  }
+
+  .about-category-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
 
@@ -368,8 +809,8 @@ section>* {
 
 .highlight-card {
   position: relative;
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #f0eeea;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   transition: var(--transition-smooth);
   overflow: hidden;
   border-radius: 12px;
@@ -438,7 +879,7 @@ section>* {
 .card-body {
   position: relative;
   z-index: 1;
-  padding: 40px;
+  padding: 20px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -452,40 +893,41 @@ section>* {
   color: var(--accent-pink);
   margin-bottom: 24px;
   font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.534);
 }
 
 .card-title {
   font-size: 1.5rem;
-  margin-bottom: 16px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.808);
 }
 
 .card-title-main {
   font-size: 2rem;
   margin-bottom: 8px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.801);
 }
 
 .card-title-sub {
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.4;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.801);
 }
 
 .card-desc {
   color: var(--text-white);
   font-size: 1.0rem;
   line-height: 1.6;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(3, 3, 3, 0.555);
 }
 
 /* Normal Card (Image Top, Text Bottom) */
 .normal-card {
   display: flex;
   flex-direction: column;
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   overflow: hidden;
   transition: var(--transition-smooth);
@@ -510,7 +952,7 @@ section>* {
 .card-title-normal {
   font-size: 1.25rem;
   margin: 0;
-  color: var(--text-white);
+  color: #111111;
   font-family: var(--font-display);
 }
 
@@ -524,21 +966,22 @@ section>* {
 }
 
 .benefit-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-left: 3px solid var(--accent-pink);
   border-radius: 12px;
   padding: 28px 24px;
   transition: var(--transition-smooth);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .benefit-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 0, 127, 0.46) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(255, 0, 127, 0.06) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -547,7 +990,7 @@ section>* {
   border-color: rgba(255, 0, 127, 0.4);
   border-left-color: var(--accent-pink);
   transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(255, 0, 127, 0.12);
+  box-shadow: 0 8px 32px rgba(255, 0, 127, 0.10);
 }
 
 .benefit-img {
@@ -581,7 +1024,7 @@ section>* {
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--text-white);
+  color: #111111;
   letter-spacing: -0.01em;
 }
 
@@ -596,7 +1039,7 @@ section>* {
 
 .benefit-list li {
   font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #444444;
   padding-left: 18px;
   position: relative;
   line-height: 1.5;
@@ -612,7 +1055,7 @@ section>* {
 }
 
 .benefit-detail {
-  color: var(--text-muted);
+  color: #888888;
   font-size: 0.82rem;
 }
 
@@ -622,8 +1065,8 @@ section>* {
   margin-bottom: 40px;
   border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(255, 0, 127, 0.15) 0%, rgba(68, 16, 53, 0.9) 50%, rgba(255, 0, 127, 0.08) 100%);
-  border: 1px solid rgba(255, 0, 127, 0.25);
+  background: linear-gradient(135deg, rgba(255, 0, 127, 0.06) 0%, rgba(255, 240, 248, 0.9) 50%, rgba(255, 0, 127, 0.04) 100%);
+  border: 1px solid rgba(255, 0, 127, 0.18);
   padding: 2px;
 }
 
@@ -633,7 +1076,7 @@ section>* {
   right: -20%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(255, 0, 127, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 0, 127, 0.08) 0%, transparent 70%);
   pointer-events: none;
   animation: bannerGlow 6s ease-in-out infinite alternate;
 }
@@ -654,7 +1097,7 @@ section>* {
   position: relative;
   z-index: 1;
   padding: 32px 36px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 14px;
 }
 
@@ -662,7 +1105,7 @@ section>* {
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 900;
-  color: var(--text-white);
+  color: #111111;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -694,7 +1137,7 @@ section>* {
   display: block;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text-white);
+  color: #111111;
   line-height: 1.4;
 }
 
@@ -707,14 +1150,14 @@ section>* {
 .benefit-banner-note {
   display: block;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: #888888;
   margin-top: 4px;
 }
 
 .benefit-banner-divider {
   width: 1px;
   height: 48px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 }
 
@@ -752,7 +1195,7 @@ section>* {
 .gallery-item {
   position: relative;
   overflow: hidden;
-  background: #111;
+  background: #e8e4de;
   aspect-ratio: 1;
   border-radius: 12px;
 }
@@ -788,7 +1231,7 @@ section>* {
 /* Gallery Caption */
 .gallery-caption {
   padding: 14px 16px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.85);
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -798,12 +1241,12 @@ section>* {
   font-family: var(--font-display);
   font-size: 0.95rem;
   font-weight: 800;
-  color: var(--text-white);
+  color: #111111;
 }
 
 .gallery-caption span {
   font-size: 0.82rem;
-  color: var(--text-muted);
+  color: #666666;
   line-height: 1.4;
 }
 
@@ -834,14 +1277,14 @@ section>* {
 }
 
 .info-row p {
-  color: var(--text-muted);
+  color: #666666;
   font-size: 1rem;
 }
 
 .map-container {
   height: 380px;
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -850,17 +1293,18 @@ section>* {
   width: 100%;
   height: 100%;
   border: none;
-  filter: invert(90%) hue-rotate(180deg);
+  filter: none;
 }
 
 /* RSVP Form */
 .rsvp-box {
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 60px;
   max-width: 800px;
   margin: 0 auto;
   border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07);
 }
 
 .rsvp-header {
@@ -871,10 +1315,11 @@ section>* {
 .rsvp-header h2 {
   font-size: 2.8rem;
   margin-bottom: 12px;
+  color: #111111;
 }
 
 .rsvp-header p {
-  color: var(--text-muted);
+  color: #666666;
 }
 
 .rsvp-form {
@@ -896,18 +1341,19 @@ section>* {
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: #777777;
   margin-bottom: 10px;
 }
 
 .form-group input,
 .form-group select {
-  background: #121214;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   padding: 16px;
   font-size: 1rem;
-  color: var(--text-white);
+  color: #111111;
   font-family: var(--font-body);
+  border-radius: 6px;
   transition: var(--transition-smooth);
 }
 
@@ -915,11 +1361,12 @@ section>* {
 .form-group select:focus {
   outline: none;
   border-color: var(--accent-pink);
-  background: #18181b;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 0, 127, 0.08);
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
+  filter: none;
   cursor: pointer;
 }
 
@@ -929,7 +1376,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   gap: 12px;
   cursor: pointer;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #666666;
 }
 
 .form-checkbox input {
@@ -958,8 +1405,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .rsvp-submit button:hover {
-  background: var(--text-white);
-  color: var(--bg-dark);
+  background: #111111;
+  color: #ffffff;
 }
 
 /* Success View */
@@ -972,18 +1419,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .success-msg h3 {
   font-size: 2.2rem;
   margin-bottom: 16px;
+  color: #111111;
 }
 
 .success-msg p {
-  color: var(--text-muted);
+  color: #666666;
   margin-bottom: 24px;
 }
 
 /* Footer */
 footer {
-  background: #050505;
+  background: #1a1a1a;
   padding: 50px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
 }
 
 .footer-grid {
@@ -1111,11 +1559,14 @@ footer {
 
 /* Background Texture Utilities */
 
-/* Shared pseudo-element for all section bg images */
+/* Shared pseudo-element for all section bg images:
+   Our Value Section과 동일하게 은은하고 화사한 화이트 글래스/그라디언트 오버레이와 
+   배경 이미지를 결합하여 텍스트 가독성과 배경 사진의 화사함을 동시에 제공합니다. */
 #about::before,
 #gallery::before,
 #program::before,
 #weddinghall::before,
+#dress::before,
 #honeymoon::before,
 #jewelry::before,
 #suit::before,
@@ -1124,7 +1575,8 @@ footer {
 #seongsu-date::before,
 #info::before,
 #gift::before,
-#rsvp::before {
+#rsvp::before,
+#partners::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -1132,116 +1584,163 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
+  opacity: 1;
 }
 
-/* OUR VALUE — wedding (2).jpg */
+/* OUR VALUE — wedding-2.jpg */
 #about {
-  background-color: #0f0a0a;
+  background-color: #fdfdfd;
 }
 
 #about::before {
-  background-image: url("assets/wedding-2.jpg");
-  opacity: 0.12;
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/wedding-2.jpg");
 }
 
-/* STYLE ARCHIVE — wedding (1).jpg */
+/* STYLE ARCHIVE — wedding-1.jpg */
 #gallery {
-  background-color: #0c0c0d;
+  background-color: #f9f7f4;
 }
 
 #gallery::before {
-  background-image: url("assets/wedding-1.jpg");
-  opacity: 0.12;
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/wedding-1.jpg");
 }
 
-/* PROGRAMS — wedding (3).jpg */
-#program {
-  background-color: #012b08;
-}
-
-#program::before {
-  background-image: url("assets/wedding-3.jpg");
-  opacity: 0.22;
-}
-
-/* WWEDDING HALL — housewedding.jpg */
-#weddinghall {
-  background-color: #2b2300;
-}
-
-#weddinghall::before {
-  background-image: url("assets/wedding2.jpg");
-  opacity: 0.22;
-}
-
-/* HONEYMOON — wedding3.jpg */
-#honeymoon {
-  background-color: #1a4e7e;
-}
-
-#honeymoon::before {
-  background-image: url("assets/wedding3.jpg");
-  opacity: 0.22;
-}
-
-/* JEWELRY — wedding4.jpg */
-#jewelry {
-  background-color: #2a2b30;
-}
-
-#jewelry::before {
-  background-image: url("assets/orot_story2.jpg");
-  opacity: 0.22;
-}
-
-/* 수트 — wedding5.jpg */
-#suit {
-  background-color: #4b2200;
-}
-
-#suit::before {
-  background-image: url("assets/tailor-logo.jpg");
-  opacity: 0.22;
-}
-
-/* 토탈웨딩 */
-#totalwedding {
-  background-color: #c591b87a;
-}
-
-#totalwedding::before {
-  background-image: url("assets/total01.jpg");
-  opacity: 0.22;
-}
-
-/* 스튜디오 */
-#studio {
-  background-color: #91c5c57a;
-}
-
-#studio::before {
-  background-image: url("assets/studio01.jpg");
-  opacity: 0.22;
-}
-
-/* gift */
+/* GIFT */
 #gift {
-  background-color: #50722c;
+  background-color: #f5f8f0;
 }
 
 #gift::before {
-  background-image: url("assets/olivyoung-1.jpg");
-  opacity: 0.22;
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/olivyoung-1.jpg");
 }
 
 /* 성수 데이트 프로모션 */
 #seongsu-date {
-  background-color: #1a1a1a;
+  background-color: #f7f4ef;
 }
 
 #seongsu-date::before {
-  background-image: url("assets/promo-1.jpg");
-  opacity: 0.2;
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/promo-1.jpg");
+}
+
+/* PROGRAMS — 웨딩패키지 */
+#program {
+  background-color: #faf7f5;
+}
+
+#program::before {
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/wedding-3.jpg");
+}
+
+/* WEDDING HALL */
+#weddinghall {
+  background-color: #f5f3ef;
+}
+
+#weddinghall::before {
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/wedding2.jpg");
+}
+
+/* DRESS */
+#dress {
+  background-color: #f9f5fb;
+}
+
+#dress::before {
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/ttwedding07.jpg");
+}
+
+/* HONEYMOON */
+#honeymoon {
+  background-color: #f0f5fb;
+}
+
+#honeymoon::before {
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/wedding3.jpg");
+}
+
+/* JEWELRY */
+#jewelry {
+  background-color: #f7f5f2;
+}
+
+#jewelry::before {
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/orot_story2.jpg");
+}
+
+/* 수트 */
+#suit {
+  background-color: #f4f2ee;
+}
+
+#suit::before {
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/tailor-logo.jpg");
+}
+
+/* 토탈웨딩 */
+#totalwedding {
+  background-color: #fdf7fb;
+}
+
+#totalwedding::before {
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/total01.jpg");
+}
+
+/* 스튜디오 */
+#studio {
+  background-color: #f5fbfb;
+}
+
+#studio::before {
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/studio01.jpg");
 }
 
 /* Gift Bottom: circles + info */
@@ -1263,7 +1762,7 @@ footer {
   height: 250px;
   border-radius: 16px;
   overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.3);
+  border: 3px solid rgba(255, 0, 127, 0.2);
 }
 
 .gift-circle img {
@@ -1280,7 +1779,7 @@ footer {
 .gift-info-title {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--text-white);
+  color: #333333;
   margin-bottom: 16px;
 }
 
@@ -1293,7 +1792,7 @@ footer {
 
 .gift-floor-list li {
   font-size: 1rem;
-  color: var(--text-white);
+  color: #444444;
 }
 
 .gift-floor-list li strong {
@@ -1303,49 +1802,47 @@ footer {
   margin-right: 8px;
 }
 
-/* LOCATION & SCHEDULE — wedding (4).jpg */
+/* LOCATION & SCHEDULE */
 #info {
-  background-color: #121214;
+  background-color: #f7f5f2;
 }
 
 #info::before {
-  background-image: url("assets/building.jpg");
-  opacity: 0.12;
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/building.jpg");
 }
 
-/* RSVP — brick-wall.jpg */
+/* RSVP */
 #rsvp {
-  background-color: #0f0a0a;
+  background-color: #fdf9f6;
 }
 
 #rsvp::before {
-  background-image: url("assets/brick-wall.jpg");
-  opacity: 0.18;
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/brick-wall.jpg");
 }
 
 .bg-concrete {
-  background-color: var(--bg-concrete);
+  background-color: #f4f2ef;
 }
 
-/* DRESS — ttwedding07.jpg */
-#dress {
-  background-color: #19102b;
+/* PARTNERS */
+#partners {
+  position: relative;
 }
 
-#dress::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("assets/ttwedding07.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.18;
-  z-index: 0;
-}
-
-#gift::before {
-  background-image: url("assets/olivyoung-1.jpg");
-  opacity: 0.18;
+#partners::before {
+  background-image: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.50) 50%,
+      rgba(255, 255, 255, 0.95) 100%),
+    url("assets/wedding-1.jpg");
 }
 
 
@@ -1364,22 +1861,24 @@ footer {
 .partner-card {
   display: grid;
   grid-template-columns: 280px 1fr;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: 16px;
   overflow: hidden;
   transition: all .3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .partner-card:hover {
   border-color: var(--accent-pink);
   transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(255, 0, 127, 0.08);
 }
 
 .partner-category {
   background: linear-gradient(135deg,
-      rgba(255, 126, 179, .15),
-      rgba(255, 255, 255, .05));
+      rgba(255, 126, 179, 0.12),
+      rgba(255, 240, 248, 0.85));
 
   display: flex;
   flex-direction: column;
@@ -1391,7 +1890,7 @@ footer {
 
   font-size: 1.3rem;
   font-weight: 700;
-  color: #fff;
+  color: #1a1a1a;
 }
 
 .partner-category small {
@@ -1404,7 +1903,7 @@ footer {
 .partner-content {
   padding: 32px;
   line-height: 2;
-  color: var(--text-muted);
+  color: #555555;
   font-size: 1rem;
 }
 
@@ -1429,11 +1928,12 @@ footer {
 .wedding-package-wrap {
   max-width: 1200px;
   margin: 0 auto;
-  background: transparent; /* 배경 투명 처리로 사이트 테마와 자연스러운 융합 */
+  background: transparent;
+  /* 배경 투명 처리로 사이트 테마와 자연스러운 융합 */
   padding: 0;
-  color: #ffffff;
+  color: #1a1a1a;
   position: relative;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: var(--font-body);
 }
 
 /* 상단 헤더 (첫 버전 레이아웃) */
@@ -1441,29 +1941,33 @@ footer {
   position: relative;
   margin-bottom: 35px;
 }
+
 .wp-badge-top {
   font-size: 0.95rem;
-  color: #cfdbd5;
+  color: var(--accent-pink);
   font-weight: 700;
   letter-spacing: 0.05em;
   margin-bottom: 12px;
   display: inline-block;
 }
+
 .wp-main-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.28;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #111111;
   margin-bottom: 10px;
 }
+
 .wp-sub-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #333333;
   margin-bottom: 25px;
   letter-spacing: -0.01em;
 }
+
 .wp-sub-title .hot-tag {
   color: var(--accent-pink);
   font-family: 'Montserrat', sans-serif;
@@ -1482,22 +1986,38 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
 .wp-emblem svg {
   width: 100%;
   height: 100%;
   animation: rotateEmblem 24s linear infinite;
 }
+
+.wp-emblem svg path {
+  stroke: rgba(0, 0, 0, 0.2);
+}
+
+.wp-emblem svg text {
+  fill: #333333;
+}
+
 .wp-emblem-center {
   position: absolute;
   font-family: 'Cormorant Garamond', 'Playfair Display', serif;
   font-size: 1.55rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #222222;
   letter-spacing: 0.08em;
 }
+
 @keyframes rotateEmblem {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* WEDDING EDIT 로고 & 슬로건 (중앙 정렬 구조 유지) */
@@ -1506,22 +2026,25 @@ footer {
   margin: 15px 0 35px;
   position: relative;
 }
+
 .wp-brand-logo {
   font-family: 'Cormorant Garamond', 'Playfair Display', serif;
   font-size: 2.5rem;
   font-weight: 600;
   letter-spacing: 0.22em;
-  color: #ffffff;
+  color: #111111;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
 }
+
 .wp-sparkle {
   font-size: 1rem;
-  color: #d6e2dd;
+  color: var(--accent-pink);
   opacity: 0.85;
 }
+
 .wp-slogan-wrap {
   display: flex;
   align-items: center;
@@ -1529,18 +2052,20 @@ footer {
   gap: 16px;
   margin-bottom: 25px;
 }
+
 .wp-slogan-line {
   flex: 1;
   max-width: 200px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.12);
 }
+
 .wp-slogan {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.32em;
-  color: #cbd7d2;
+  color: #666666;
   text-transform: uppercase;
 }
 
@@ -1558,7 +2083,8 @@ footer {
   background: #ffffff;
   border-radius: 14px;
   display: grid;
-  grid-template-columns: 320px 1fr 230px; /* 1200px 컨테이너에 완벽 매칭되도록 가로 비율 조정 */
+  grid-template-columns: 320px 1fr 230px;
+  /* 1200px 컨테이너에 완벽 매칭되도록 가로 비율 조정 */
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   position: relative;
@@ -1566,10 +2092,12 @@ footer {
   color: #222222;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .wp-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 38px rgba(0, 0, 0, 0.5);
 }
+
 .wp-card.card-mood {
   border: 2px solid var(--accent-pink);
 }
@@ -1581,6 +2109,7 @@ footer {
   overflow: hidden;
   min-height: 200px;
 }
+
 .wp-card-thumb img {
   width: 100%;
   height: 100%;
@@ -1588,6 +2117,7 @@ footer {
   display: block;
   transition: transform 0.5s ease;
 }
+
 .wp-card:hover .wp-card-thumb img {
   transform: scale(1.04);
 }
@@ -1607,21 +2137,32 @@ footer {
   flex-shrink: 0;
   width: 170px;
 }
+
 .wp-num-title {
   display: flex;
   align-items: baseline;
   gap: 8px;
   margin-bottom: 4px;
 }
+
 .wp-card-num {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 1;
 }
-.wp-card.card-basic .wp-card-num { color: #5a578c; }
-.wp-card.card-mood .wp-card-num { color: #d04d5c; }
-.wp-card.card-iconic .wp-card-num { color: #32577f; }
+
+.wp-card.card-basic .wp-card-num {
+  color: #5a578c;
+}
+
+.wp-card.card-mood .wp-card-num {
+  color: #d04d5c;
+}
+
+.wp-card.card-iconic .wp-card-num {
+  color: #32577f;
+}
 
 .wp-card-name {
   font-family: 'Playfair Display', serif;
@@ -1630,6 +2171,7 @@ footer {
   letter-spacing: 0.02em;
   color: #222;
 }
+
 .wp-star {
   color: var(--accent-pink);
   font-size: 1.05rem;
@@ -1643,9 +2185,18 @@ footer {
   line-height: 1.25;
   margin-bottom: 8px;
 }
-.wp-card.card-basic .wp-script-text { color: #6a6799; }
-.wp-card.card-mood .wp-script-text { color: #d04d5c; }
-.wp-card.card-iconic .wp-script-text { color: #32577f; }
+
+.wp-card.card-basic .wp-script-text {
+  color: #6a6799;
+}
+
+.wp-card.card-mood .wp-script-text {
+  color: #d04d5c;
+}
+
+.wp-card.card-iconic .wp-script-text {
+  color: #32577f;
+}
 
 .wp-summary-desc {
   font-size: 0.82rem;
@@ -1664,11 +2215,13 @@ footer {
   padding-left: 24px;
   border-left: 1px dashed #e2e4e8;
 }
+
 .wp-vendor-item {
   display: flex;
   align-items: center;
   gap: 14px;
 }
+
 .wp-vendor-icon {
   width: 34px;
   height: 34px;
@@ -1681,16 +2234,19 @@ footer {
   font-size: 0.88rem;
   flex-shrink: 0;
 }
+
 .wp-vendor-meta {
   display: flex;
   flex-direction: column;
   line-height: 1.25;
 }
+
 .wp-vendor-cat {
   font-size: 0.75rem;
   color: #777777;
   font-weight: 600;
 }
+
 .wp-vendor-name {
   font-size: 0.92rem;
   color: #111111;
@@ -1713,9 +2269,11 @@ footer {
 .wp-card.card-basic .wp-card-price-box {
   background: linear-gradient(145deg, #8a92bb, #7880ab);
 }
+
 .wp-card.card-mood .wp-card-price-box {
   background: linear-gradient(145deg, #e4878e, #d6747c);
 }
+
 .wp-card.card-iconic .wp-card-price-box {
   background: linear-gradient(145deg, #5b81a4, #4a7093);
 }
@@ -1728,6 +2286,7 @@ footer {
   letter-spacing: -0.03em;
   margin-bottom: 4px;
 }
+
 .wp-price-unit {
   font-size: 0.95rem;
   font-weight: 600;
@@ -1765,28 +2324,32 @@ footer {
 .wp-footer-summary {
   margin-top: 35px;
   padding: 35px 30px;
-  background: rgba(0, 0, 0, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   text-align: center;
 }
+
 .wp-footer-desc-top {
   font-size: 1.05rem;
-  color: #e5ede9;
+  color: #805f7b;
   font-weight: 600;
   margin-bottom: 30px;
   letter-spacing: -0.01em;
 }
+
 .wp-footer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   text-align: center;
 }
+
 .wp-footer-col {
   padding: 0 16px;
   position: relative;
 }
+
 .wp-footer-col:not(:last-child)::after {
   content: '';
   position: absolute;
@@ -1796,6 +2359,7 @@ footer {
   width: 1px;
   border-right: 1px dashed rgba(255, 255, 255, 0.15);
 }
+
 .wp-footer-col-header {
   display: flex;
   align-items: center;
@@ -1803,6 +2367,7 @@ footer {
   gap: 8px;
   margin-bottom: 10px;
 }
+
 .wp-footer-num {
   display: inline-flex;
   align-items: center;
@@ -1815,17 +2380,27 @@ footer {
   font-weight: 700;
   color: #ffffff;
 }
-.wp-footer-col:nth-child(1) .wp-footer-num { background: #8a92bb; }
-.wp-footer-col:nth-child(2) .wp-footer-num { background: #e4878e; }
-.wp-footer-col:nth-child(3) .wp-footer-num { background: #5b81a4; }
+
+.wp-footer-col:nth-child(1) .wp-footer-num {
+  background: #8a92bb;
+}
+
+.wp-footer-col:nth-child(2) .wp-footer-num {
+  background: #e4878e;
+}
+
+.wp-footer-col:nth-child(3) .wp-footer-num {
+  background: #5b81a4;
+}
 
 .wp-footer-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #808080;
   letter-spacing: 0.04em;
 }
+
 .wp-footer-rec-mini {
   display: inline-block;
   background: var(--accent-pink);
@@ -1837,6 +2412,7 @@ footer {
   border-radius: 3px;
   margin-bottom: 6px;
 }
+
 .wp-footer-text {
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -1858,9 +2434,19 @@ footer {
   .wp-card {
     grid-template-columns: 240px 1fr 190px;
   }
-  .wp-card-body { padding: 20px; gap: 16px; }
-  .wp-info-title-box { width: 140px; }
-  .wp-price-main { font-size: 2.4rem; }
+
+  .wp-card-body {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .wp-info-title-box {
+    width: 140px;
+  }
+
+  .wp-price-main {
+    font-size: 2.4rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1868,26 +2454,37 @@ footer {
     width: 75px;
     height: 75px;
   }
+
   .wp-emblem-center {
     font-size: 1.1rem;
   }
-  .wp-brand-logo { font-size: 1.8rem; }
-  .wp-slogan-line { max-width: 100px; }
+
+  .wp-brand-logo {
+    font-size: 1.8rem;
+  }
+
+  .wp-slogan-line {
+    max-width: 100px;
+  }
 
   .wp-card {
     grid-template-columns: 1fr;
   }
+
   .wp-card-thumb {
     height: 220px;
   }
+
   .wp-card-body {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .wp-info-title-box {
     width: 100%;
     margin-bottom: 12px;
   }
+
   .wp-vendor-list {
     width: 100%;
     padding-left: 0;
@@ -1895,18 +2492,21 @@ footer {
     border-top: 1px dashed #e2e4e8;
     padding-top: 16px;
   }
-  
+
   .wp-footer-grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
   .wp-footer-col:not(:last-child)::after {
     display: none;
   }
+
   .wp-footer-col {
     border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
     padding-bottom: 20px;
   }
+
   .wp-footer-col:last-child {
     border-bottom: none;
   }
