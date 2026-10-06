@@ -60,6 +60,55 @@ document.addEventListener('DOMContentLoaded', () => {
     setupToggle('guestsUndecided', 'guests');
     setupToggle('noCar', 'carNumber');
 
+    // 희망 방문일에 따른 방문 시간 옵션 동적 설정 (10일 토요일 11시 마감 처리)
+    const timeOptionsByDate = {
+      '10월10일(토)': [
+        { time: '11시', disabled: true, label: '11시 (마감)' },
+        { time: '12시', disabled: false, label: '12시' },
+        { time: '1시', disabled: false, label: '1시' },
+        { time: '2시', disabled: false, label: '2시' },
+        { time: '3시', disabled: false, label: '3시' },
+        { time: '4시', disabled: false, label: '4시' },
+        { time: '5시', disabled: false, label: '5시' }
+      ],
+      '10월11일(일)': [
+        { time: '11시', disabled: false, label: '11시' },
+        { time: '12시', disabled: false, label: '12시' },
+        { time: '1시', disabled: false, label: '1시' },
+        { time: '2시', disabled: false, label: '2시' },
+        { time: '3시', disabled: false, label: '3시' },
+        { time: '4시', disabled: false, label: '4시' },
+        { time: '5시', disabled: false, label: '5시' }
+      ]
+    };
+
+    const visitDateSelect = document.getElementById('visitDate');
+    const visitTimeSelect = document.getElementById('visitTime');
+
+    if (visitDateSelect && visitTimeSelect) {
+      visitDateSelect.addEventListener('change', () => {
+        const selectedDate = visitDateSelect.value;
+        const timeList = timeOptionsByDate[selectedDate];
+
+        visitTimeSelect.innerHTML = '<option value="" disabled selected>방문 시간을 선택하세요</option>';
+
+        if (timeList && timeList.length > 0) {
+          visitTimeSelect.disabled = false;
+          timeList.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item.time;
+            option.textContent = item.label;
+            if (item.disabled) {
+              option.disabled = true;
+            }
+            visitTimeSelect.appendChild(option);
+          });
+        } else {
+          visitTimeSelect.disabled = true;
+        }
+      });
+    }
+
     rsvpForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
