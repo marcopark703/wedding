@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setupToggle('guestsUndecided', 'guests');
     setupToggle('noCar', 'carNumber');
 
-    // 희망 방문일에 따른 방문 시간 옵션 동적 설정 (10일 토요일 11시 마감 처리)
+    // 희망 방문일에 따른 방문 시간 옵션 동적 설정
     const timeOptionsByDate = {
-      '10월10일(토)': [
-        { time: '11시', disabled: true, label: '11시 (마감)' },
+      '10월31일(토)': [
+        { time: '11시', disabled: false, label: '11시' },
         { time: '12시', disabled: false, label: '12시' },
         { time: '1시', disabled: false, label: '1시' },
         { time: '2시', disabled: false, label: '2시' },
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { time: '4시', disabled: false, label: '4시' },
         { time: '5시', disabled: false, label: '5시' }
       ],
-      '10월11일(일)': [
+      '11월01일(일)': [
         { time: '11시', disabled: false, label: '11시' },
         { time: '12시', disabled: false, label: '12시' },
         { time: '1시', disabled: false, label: '1시' },
